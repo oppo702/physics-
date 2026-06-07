@@ -21,13 +21,15 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  <script src="/_sdk/telemetry_sdk.js"></script></head>
  <body class="h-full bg-slate-900 text-white overflow-auto">
-  <div id="app" class="w-full min-h-full flex flex-col"><!-- Header -->
+  <div id="app" class="w-full min-h-full flex flex-col">
+   <!-- Header -->
    <header class="bg-gradient-to-l from-sky-600 to-indigo-700 p-6 shadow-lg">
     <h1 id="site-title" class="text-2xl md:text-3xl font-bold text-center">قواعد الفيزياء - أول ثانوي (الفصل الثاني)</h1>
     <p class="text-center text-sky-100 mt-2 text-sm">الوحدة الأولى إلى السادسة • شرح القوانين وطريقة الحل</p>
    </header><!-- Navigation -->
    <nav class="bg-slate-800 border-b border-slate-700 p-3 overflow-x-auto">
-    <div class="flex gap-2 justify-start md:justify-center min-w-max px-2"><button class="nav-btn active px-4 py-2 rounded-lg text-sm font-semibold transition whitespace-nowrap" data-unit="1">الوحدة 1: مدخل الفيزياء</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="2">الوحدة 2: تمثيل الحركة</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="3">الوحدة 3: الحركة المتسارعة</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="4">الوحدة 4: القوى في بُعد واحد</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="5">الوحدة 5: القوى في بُعدين</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="6">الوحدة 6: الحركة في بُعدين</button>
+    <div class="flex gap-2 justify-start md:justify-center min-w-max px-2">
+     <button class="nav-btn active px-4 py-2 rounded-lg text-sm font-semibold transition whitespace-nowrap" data-unit="1">الوحدة 1: مدخل الفيزياء</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="2">الوحدة 2: تمثيل الحركة</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="3">الوحدة 3: الحركة المتسارعة</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="4">الوحدة 4: القوى في بُعد واحد</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="5">الوحدة 5: القوى في بُعدين</button> <button class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 hover:bg-sky-500 transition whitespace-nowrap" data-unit="6">الوحدة 6: الحركة في بُعدين</button>
     </div>
    </nav><!-- Content -->
    <main id="content" class="flex-1 p-4 md:p-8 max-w-5xl mx-auto w-full">
@@ -293,62 +295,94 @@
       },
       5: {
         title: "القوى في بُعدين",
-        subtitle: "تحليل القوى والاتزان",
+        subtitle: "تحليل القوى المتجهة والاتزان",
         sections: [
           {
-            heading: "تحليل القوى إلى مركبات",
+            heading: "تحليل المتجه (القوة المتجهة) إلى مركبات",
             content: `<div class="space-y-4">
+              <div class="bg-slate-700 p-4 rounded-lg">
+                <p class="text-sky-300 mb-2">القوة متجه لها مقدار واتجاه. نحللها إلى مركبتين:</p>
+              </div>
               <div class="bg-sky-900/40 p-5 rounded-xl border border-sky-500/30">
-                <p class="font-bold text-sky-300 mb-3">المركبة الأفقية:</p>
-                <p class="formula-box text-2xl text-center text-sky-200">F<sub>x</sub> = F · cos θ</p>
-                <p class="font-bold text-sky-300 mb-3 mt-4">المركبة الرأسية:</p>
-                <p class="formula-box text-2xl text-center text-sky-200">F<sub>y</sub> = F · sin θ</p>
+                <p class="font-bold text-sky-300 mb-2">المركبة الأفقية (x):</p>
+                <p class="formula-box text-2xl text-center text-sky-200">F<sub>x</sub> = |F| · cos θ</p>
+                <p class="font-bold text-sky-300 mb-2 mt-4">المركبة الرأسية (y):</p>
+                <p class="formula-box text-2xl text-center text-sky-200">F<sub>y</sub> = |F| · sin θ</p>
               </div>
               <div class="bg-slate-700 p-4 rounded-lg">
-                <p><strong>F:</strong> مقدار القوة (N)</p>
-                <p><strong>θ:</strong> الزاوية مع المحور الأفقي</p>
+                <p><strong>|F|:</strong> مقدار (أو طول) متجه القوة (N)</p>
+                <p><strong>θ:</strong> الزاوية مع المحور الموجب (x)</p>
+                <p class="mt-2 text-sky-300">ملاحظة: المركبات قد تكون موجبة أو سالبة حسب الاتجاه</p>
               </div>
               <div class="bg-indigo-900/50 p-4 rounded-lg border border-indigo-500/30">
-                <p class="font-bold text-amber-300 mb-2">مثال: قوة 50N تصنع زاوية 30° مع الأفقي</p>
-                <p class="formula-box text-lg text-center my-1">F<sub>x</sub> = 50 × cos30° = 50 × 0.866 = 43.3 N</p>
-                <p class="formula-box text-lg text-center my-1">F<sub>y</sub> = 50 × sin30° = 50 × 0.5 = 25 N</p>
+                <p class="font-bold text-amber-300 mb-2">مثال: متجه قوة مقداره 50N يصنع زاوية 30° مع الأفقي</p>
+                <p class="formula-box text-lg text-center my-1">F<sub>x</sub> = 50 cos(30°) = 50 × 0.866 = 43.3 N</p>
+                <p class="formula-box text-lg text-center my-1">F<sub>y</sub> = 50 sin(30°) = 50 × 0.5 = 25 N</p>
               </div>
             </div>`
           },
           {
-            heading: "محصلة القوى",
+            heading: "جمع المتجهات (محصلة القوى المتعددة)",
             content: `<div class="space-y-4">
-              <div class="bg-sky-900/40 p-5 rounded-xl border border-sky-500/30 text-center">
-                <p class="formula-box text-2xl text-sky-200">F<sub>R</sub> = √(F<sub>x</sub>² + F<sub>y</sub>²)</p>
-                <p class="formula-box text-xl text-sky-200 mt-3">θ = tan⁻¹(F<sub>y</sub> / F<sub>x</sub>)</p>
+              <div class="bg-slate-700 p-4 rounded-lg">
+                <p class="text-sky-300 mb-2"><strong>الخطوة 1:</strong> حلل كل متجه قوة إلى مركبات x و y</p>
+                <p class="text-sky-300"><strong>الخطوة 2:</strong> اجمع جميع المركبات الأفقية ودهات x بشكل منفصل</p>
+                <p class="text-sky-300"><strong>الخطوة 3:</strong> اجمع جميع المركبات الرأسية (المركبات y)</p>
+                <p class="text-sky-300"><strong>الخطوة 4:</strong> أوجد محصلة المركبات</p>
+              </div>
+              <div class="bg-sky-900/40 p-5 rounded-xl border border-sky-500/30">
+                <p class="font-bold text-sky-300 mb-2">مجموع المركبات:</p>
+                <p class="formula-box text-xl text-center text-sky-200">ΣF<sub>x</sub> = F<sub>1x</sub> + F<sub>2x</sub> + F<sub>3x</sub> + ...</p>
+                <p class="formula-box text-xl text-center text-sky-200 mt-2">ΣF<sub>y</sub> = F<sub>1y</sub> + F<sub>2y</sub> + F<sub>3y</sub> + ...</p>
+                <p class="font-bold text-sky-300 mb-2 mt-4">مقدار محصلة القوى:</p>
+                <p class="formula-box text-2xl text-center text-sky-200">|F<sub>R</sub>| = √[(ΣF<sub>x</sub>)² + (ΣF<sub>y</sub>)²]</p>
+                <p class="font-bold text-sky-300 mb-2 mt-4">اتجاه محصلة القوى:</p>
+                <p class="formula-box text-xl text-center text-sky-200">θ<sub>R</sub> = tan⁻¹(ΣF<sub>y</sub> / ΣF<sub>x</sub>)</p>
               </div>
               <div class="bg-indigo-900/50 p-4 rounded-lg border border-indigo-500/30">
-                <p class="font-bold text-amber-300 mb-2">مثال: F<sub>x</sub> = 3N, F<sub>y</sub> = 4N</p>
-                <p class="formula-box text-xl text-center my-2">F<sub>R</sub> = √(9 + 16) = √25 = 5 N</p>
-                <p class="formula-box text-lg text-center">θ = tan⁻¹(4/3) = 53.1°</p>
+                <p class="font-bold text-amber-300 mb-2">مثال: قوتان متجهتان F₁ = 3N بالاتجاه الموجب (x) و F₂ = 4N بالاتجاه الموجب (y)</p>
+                <p class="formula-box text-base mt-1">ΣF<sub>x</sub> = 3 N</p>
+                <p class="formula-box text-base mt-1">ΣF<sub>y</sub> = 4 N</p>
+                <p class="formula-box text-lg text-center my-2">|F<sub>R</sub>| = √(3² + 4²) = √25 = 5 N</p>
+                <p class="formula-box text-base text-center">θ<sub>R</sub> = tan⁻¹(4/3) = 53.1°</p>
               </div>
             </div>`
           },
           {
-            heading: "شروط الاتزان",
+            heading: "شروط الاتزان للنظام",
             content: `<div class="space-y-4">
+              <div class="bg-slate-700 p-4 rounded-lg">
+                <p class="text-sky-300 font-bold mb-2">الجسم في حالة اتزان إذا كانت محصلة جميع القوى المؤثرة عليه = صفر</p>
+              </div>
               <div class="bg-sky-900/40 p-5 rounded-xl border border-sky-500/30 text-center">
-                <p class="formula-box text-2xl text-sky-200">ΣF<sub>x</sub> = 0</p>
-                <p class="formula-box text-2xl text-sky-200 mt-2">ΣF<sub>y</sub> = 0</p>
+                <p class="formula-box text-2xl text-sky-200">ΣF = 0</p>
+                <p class="text-sky-300 mt-3">يجب أن تكون:</p>
+                <p class="formula-box text-xl text-sky-200">ΣF<sub>x</sub> = 0</p>
+                <p class="formula-box text-xl text-sky-200 mt-1">ΣF<sub>y</sub> = 0</p>
+              </div>
+              <div class="bg-indigo-900/50 p-4 rounded-lg border border-indigo-500/30">
+                <p class="font-bold text-amber-300 mb-2">مثال: جسم معلق بحبلين يصنعان زوايا مختلفة</p>
+                <p class="text-slate-300 text-sm">إذا كانت القوة الأفقية لأحد الحبلين 30N لليمين، يجب أن تكون الحبل الآخر يوفر قوة 30N لليسار لتحقيق الاتزان.</p>
+                <p class="formula-box text-base mt-2">T<sub>1x</sub> + T<sub>2x</sub> = 0 → T<sub>2x</sub> = -30 N</p>
+              </div>
+            </div>`
+          },
+          {
+            heading: "تطبيق: القوى على مستوى مائل",
+            content: `<div class="space-y-4">
+              <div class="bg-slate-700 p-4 rounded-lg">
+                <p class="text-sky-300 mb-2">جسم على مستوى مائل بزاوية θ مع الأفقي</p>
+                <p class="text-sky-300">الوزن W = mg يتحلل إلى:</p>
+              </div>
+              <div class="bg-sky-900/40 p-5 rounded-xl border border-sky-500/30">
+                <p class="font-bold text-sky-300 mb-2">المركبة الموازية للسطح (تسبب الحركة):</p>
+                <p class="formula-box text-2xl text-center text-sky-200">F<sub>∥</sub> = mg sin θ</p>
+                <p class="font-bold text-sky-300 mb-2 mt-4">المركبة العمودية على السطح:</p>
+                <p class="formula-box text-2xl text-center text-sky-200">F<sub>⊥</sub> = mg cos θ</p>
               </div>
               <div class="bg-slate-700 p-4 rounded-lg">
-                <p>الجسم في حالة اتزان عندما تكون محصلة القوى المؤثرة عليه تساوي صفراً في جميع الاتجاهات.</p>
-              </div>
-            </div>`
-          },
-          {
-            heading: "القوة على مستوى مائل",
-            content: `<div class="space-y-4">
-              <div class="bg-sky-900/40 p-5 rounded-xl border border-sky-500/30">
-                <p class="font-bold text-sky-300 mb-2">القوة الموازية للسطح:</p>
-                <p class="formula-box text-2xl text-center text-sky-200">F<sub>∥</sub> = mg · sin θ</p>
-                <p class="font-bold text-sky-300 mb-2 mt-4">القوة العمودية:</p>
-                <p class="formula-box text-2xl text-center text-sky-200">F<sub>N</sub> = mg · cos θ</p>
+                <p class="text-sky-300"><strong>ملاحظة مهمة:</strong> القوة العمودية F<sub>N</sub> = F<sub>⊥</sub> = mg cos θ</p>
+                <p class="text-sky-300 mt-2">قوة الاحتكاك = μ × F<sub>N</sub> = μ × mg cos θ</p>
               </div>
             </div>`
           }
@@ -492,5 +526,5 @@
 
     lucide.createIcons();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a070bbe2ca3ed40f',t:'MTc4MDY3ODgzMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a07f4a4a1a6ae0de',t:'MTc4MDgzMTQ2NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
